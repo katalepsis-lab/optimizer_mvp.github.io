@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Markus AI</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Prism syntax highlighting -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+
+  <!-- Markdown renderer -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+  <div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+        <div class="logo-row">
+            <img src="logo.png" class="logo-img">
+            <span class="logo-text">Markus AI</span>
+        </div>
+        <!-- keep your New chat button as-is -->
+        <!-- <button id="newChatBtn">+ New chat</button> -->
+        </div>
+
+      <button id="newChatBtn">+ New chat</button>
+      <button id="newOptChatBtn" class="opt-chat-btn">+ New optimization chat</button>
+
+      <div class="sidebar-section">
+        <div class="section-title">Chats</div>
+        <div id="conversationList" class="conversation-list"></div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="section-title">Model</div>
+        <select id="modelSelect">
+          <option value="gpt-4o-mini">gpt-4o-mini</option>
+          <option value="gpt-4o">gpt-4o</option>
+        </select>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="section-title">Context</div>
+        <label class="toggle">
+          <input type="checkbox" id="keepContextToggle" checked />
+          <span>Keep context (history)</span>
+        </label>
+      </div>
+    </aside>
+
+    <main class="chat">
+      <header class="chat-header">
+        <div id="chatTitle">New chat</div>
+      </header>
+
+      <div id="messages" class="messages"></div>
+
+      <div class="input-bar">
+        <button id="fileBtn">📎</button>
+        <input type="file" id="fileInput" class="file-input" />
+        
+        <button id="micBtn">🎤</button>
+        <textarea id="userInput" placeholder="Type a message…" rows="1"></textarea>
+        <button id="sendBtn">Send</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Prism JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+
+  <script src="app.js"></script>
+</body>
+</html>
