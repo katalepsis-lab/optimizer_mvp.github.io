@@ -1,0 +1,16 @@
+# Never track secrets
+.env
+*.env
+**/.env
+
+# Never track installed libraries
+node_modules/
+UI/node_modules/
+
+# Never track build artifacts
+dist/
+build/
+
+# OS junk
+.DS_Store
+Thumbs.db
