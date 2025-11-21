@@ -407,7 +407,7 @@ async function startRecording() {
       const blob = new Blob(audioChunks, { type: "audio/webm" });
       const base64 = await blobToBase64(blob);
 
-      const res = await fetch("/api/transcribe", {
+      const res = await fetch("http://127.0.0.1:8000/api/transcribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ audio: base64 }),
@@ -455,7 +455,7 @@ async function playTTS(text, playBtn, stopBtn) {
     stopBtn.classList.remove("hidden");
     playBtn.classList.add("hidden");
 
-    const res = await fetch("/api/tts", {
+    const res = await fetch("http://127.0.0.1:8000/api/tts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
@@ -550,7 +550,7 @@ fileInput.onchange = async () => {
   appendMessageToDOM("user", `📁 Uploaded: ${file.name}`, false);
 
   // Send to backend
-  const res = await fetch("/api/upload", {
+  const res = await fetch("http://127.0.0.1:8000/api/upload", {
     method: "POST",
     body: formData,
   });
